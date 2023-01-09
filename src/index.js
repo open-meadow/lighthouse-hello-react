@@ -5,25 +5,31 @@ import './index.css';
 const Button = (props) => {
   // your code here
   return (
-    <button>Hi</button>
-  )
+    <button onClick={props.onClick}>{props.children}</button>
+  );
 };
 
 const Application = () => {
-
   // your code here
+  const [name, setName] = useState("");
+  const handleChange = (event) => {
+    setName(event.target.value);
+  };
 
   const reset = () => {
     console.log("reset");
     // your code here
+    setName("");
   };
 
   return (
     <main>
       {/* your code here -- this entire line including the curly braces can be removed */}
-      <h1>Hello React</h1>
-      <h1>Hi</h1>
-      <Button/>
+      <input
+        value={name} onChange={handleChange} placeholder='Type your name'>
+      </input>
+      <Button onClick={reset}>Reset</Button>
+      {name && <h1>Hello {name}</h1>}
     </main>
   );
 };
