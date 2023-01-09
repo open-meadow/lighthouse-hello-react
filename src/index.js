@@ -4,6 +4,9 @@ import './index.css';
 
 const Button = (props) => {
   // your code here
+  return (
+    <button>Hi</button>
+  )
 };
 
 const Application = () => {
@@ -19,6 +22,8 @@ const Application = () => {
     <main>
       {/* your code here -- this entire line including the curly braces can be removed */}
       <h1>Hello React</h1>
+      <h1>Hi</h1>
+      <Button/>
     </main>
   );
 };
